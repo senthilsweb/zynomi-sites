@@ -1,6 +1,6 @@
 
 export default async (req, res) => {
-    const movies = await $fetch("https://data.mongodb-api.com/app/data-ysrjz/endpoint/data/v1/action/findOne", {
+    const movies = await $fetch(`${process.env.MONGODB_ATLAS_REST_URL}/findOne`, {
         method: 'post', headers: {
             "api-key": `${process.env.MONGODB_ATLAS_REST_TOKEN}`
         }, body: {
