@@ -10,7 +10,7 @@
 			>
 		</h1>
 		<p class="mt-10 text-small text-center text-white font-medium">
-			From tasks and workflows to apps and systems, build and automate anything in one <br> powerful visual platform.
+			We believe dance is the best form of exercise for body and mind <br>so we offer Bollywood Bhangra fitness
 		</p>
 		<div
 			class="text-center p-10 flex items-center justify-center space-x-4"

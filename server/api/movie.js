@@ -1,4 +1,3 @@
-
 export default async (req, res) => {
     const movies = await $fetch(`${process.env.MONGODB_ATLAS_REST_URL}/findOne`, {
         method: 'post', headers: {

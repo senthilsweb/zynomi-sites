@@ -28,7 +28,7 @@
                         <div class="flex-1 flex flex-col justify-between">
                             <div class="px-4 divide-y divide-gray-200 sm:px-6">
                                 <div class="space-y-6 pt-6 pb-5">
-                                    <form name="Contact" id="Contact" class="space-y-8" method="POST" data-netlify="true" netlify-honeypot="bot-field" netlify @submit.prevent="sendContactUs" ref="frmContact">
+                                    <form name="Contact" id="Contact" class="space-y-8" method="POST" @submit.prevent="sendContactUs" ref="frmContact">
                                         <input type="hidden" name="form-name" value="Contact" />
                                         <div class="sm:overflow-hidden">
                                             <div class="bg-white space-y-6">
@@ -112,6 +112,7 @@
 </template>
 
 <script>
+//const config = useRuntimeConfig()
 export default {
     components: {
         
@@ -124,42 +125,20 @@ export default {
         }
     },
     methods: {
- async sendContactUs(args) {
+        async sendContactUs(args) {
             try {
                 let request = {}
-                let formData = new FormData();
-                formData.append('first_name', this.data.first_name);
-                formData.append('last_name', this.data.last_name);
-                formData.append('company', this.data.company);
-                formData.append('email', this.data.email);
-                //formData.append('country', this.data.country);
-                formData.append('phone_number', this.data.country_code + ' ' + this.data.phone_number);
-                formData.append('description', this.data.description);
-                formData.append('product', this.data.product);
-                formData.append('form-name', 'contact');
-                /*const {
-                    response
-                    } = await this.$axios.post( this.$config.apiURL + "/about", 
-                    formData,
-                    {headers: { "Content-Type": "application/x-www-form-urlencoded" }});
-                */
-
-                request.message ={}
-                request.message.payload = {}
-                request.message.channel = "SwaraNritya-website-lead"
-                request.message.kv_body=this.data
-                request.message.kv_key = "www.xyz.com"
-                request.message.identity = true
-                request.message.payload.body = this.data
-                request.message.payload.subject = "New sales lead from https://www.xyz.com [" + this.data.email + "]"
-                const { response_redis_enqueue } = await this.$axios.post( this.$config.restEndPoint + "/api/redis/enqueue", request);
-                const { response_redis_publish } = await this.$axios.post( this.$config.restEndPoint + "/api/redis/publish", request);
+                const { data: contact } = await useFetch("/api/contact",{
+                    method: 'post', body: this.data
+                })
+                alert("Thank you for your enquiry! our customer success team will repond as soon as possible.")
                 this.data = {}
                 this.isContactFormVisible = !this.isContactFormVisible;
-                this.$toast.success("Thank you for your enquiry! our customer success team will repond as soon as possible.")
+                //this.$toast.success("Thank you for your enquiry! our customer success team will repond as soon as possible.")
             } catch (error) {
                 this.isContactFormVisible = !this.isContactFormVisible;
-                this.$toast.error(JSON.stringify(error))
+                alert(JSON.stringify(error))
+                //this.$toast.error(JSON.stringify(error))
             } finally {
                
             }
@@ -176,6 +155,12 @@ export default {
 
     },
     mounted() {
+        this.$toast.add({
+            severity: "info",
+            summary: "Info Message",
+            detail: "Message Content",
+            life: 10000,
+        });
 
     },
     created() {

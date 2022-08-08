@@ -3,7 +3,9 @@
 		<div class="h-full relative">
 			<Header />
 			<Hero />
+    
       <Blog :articles="articles" />
+       <Testimonials />
       <Footer />
       <ContactSales/>
 		</div>

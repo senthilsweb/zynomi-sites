@@ -3,9 +3,9 @@
         <div class="md:grid md:grid-cols-2">
             <div>
             </div>
-            <dl class="mt-2 text-base leading-20 text-gray-600">
+            <dl class="mt-2 text-base leading-20 text-white">
                 <div>
-                    <h4 class="text-sm leading-5 font-semibold tracking-wider text-gray-900 uppercase">Contact Us</h4>
+                    <h4 class="text-sm leading-5 font-semibold tracking-wider text-white uppercase">Contact Us</h4>
                     <dt class="sr-only">Postal address</dt>
                     <dd class="pt-3">
                         <p>{{menuitems.contactus.companyname}}</p>
@@ -19,7 +19,7 @@
                     <dd class="flex">
                         <!-- Heroicon name: phone -->
                         <svg
-                            class="flex-shrink-0 h-6 w-6 text-purple-900"
+                            class="flex-shrink-0 h-6 w-6 text-white"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -41,7 +41,7 @@
                     >
                         <!-- Heroicon name: phone -->
                         <svg
-                            class="flex-shrink-0 h-6 w-6 text-purple-900"
+                            class="flex-shrink-0 h-6 w-6 text-white"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -67,7 +67,7 @@
                                 >
                                     <!-- Heroicon name: phone -->
                                     <svg
-                                        class="flex-shrink-0 h-6 w-6 text-purple-900"
+                                        class="flex-shrink-0 h-6 w-6 text-white"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -89,7 +89,7 @@
                     <dd class="flex">
                         <!-- Heroicon name: mail -->
                         <svg
-                            class="flex-shrink-0 h-6 w-6 text-purple-900"
+                            class="flex-shrink-0 h-6 w-6 text-white"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"

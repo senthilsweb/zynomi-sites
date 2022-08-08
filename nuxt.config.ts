@@ -18,7 +18,10 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	publicRuntimeConfig: {},
+	publicRuntimeConfig: {
+		BASE_URL: process.env.MONGODB_ATLAS_REST_URL,
+		MONGODB_ATLAS_REST_TOKEN: process.env.MONGODB_ATLAS_REST_TOKEN,
+	},
 	privateRunimeConfig: {
 		MONGODB_ATLAS_REST_URL: process.env.MONGODB_ATLAS_REST_URL,
 		MONGODB_ATLAS_REST_TOKEN: process.env.MONGODB_ATLAS_REST_TOKEN,

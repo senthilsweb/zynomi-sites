@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:max-w-8xl">
+  <div class="bg-gradient-to-r from-fuchsia-900 via-fuchsia-800 to-fuchsia-900 ... lg:max-w-8xl">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div class="xl:grid xl:grid-cols-3 xl:gap-2">
 
@@ -15,7 +15,7 @@
         <div class="flex md:order-2">
           <a
             :href="sm.link"
-            class="ml-6 text-pink-500 hover:text-pink-700"
+            class="ml-6 text-white hover:text-fuchsia-500"
             v-for="sm in menuitems.socialmedia"
             :key="sm.title"
           >
@@ -33,7 +33,7 @@
               </svg>
               </a>
         </div>
-        <p class="mt-8 text-base leading-6 text-gray-400 md:mt-0 md:order-1">
+        <p class="mt-8 text-base leading-6 text-white md:mt-0 md:order-1">
           {{menuitems.footer.copyright}}
         </p>
       </div>
