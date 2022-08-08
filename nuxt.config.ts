@@ -27,5 +27,4 @@ export default defineNuxtConfig({
 	content: {
 		// https://content.nuxtjs.org/api/configuration
 	},
-	plugins: ["~/plugins/global.js"],
 });
