@@ -3,10 +3,10 @@
 		<h1
 			class="capitalize font-semibold text-[38px] lg:text-7xl text-center leading-snug text-white"
 		>
-			Bring ideas to life <br />
+			Bring ideas to Dance and Music <br />
 			<span
 				class="font-extrabold bg-clip-text text-fuchsia-500"
-				>#withZynomi</span
+				>#withSwaranritya</span
 			>
 		</h1>
 		<p class="mt-10 text-small text-center text-white font-medium">
@@ -17,12 +17,12 @@
 		>
 			<NuxtLink
 				to="#"
+				@click="useNuxtApp().$bus.$emit('evtShowContactSales')"
 				class="px-6 py-3 text-sm bg-fuchsia-700 text-white rounded-full hover:bg-fuchsia-800 transition-all duration-300"
-				>Get started free</NuxtLink
+				>Contact us</NuxtLink
 			>
 			<NuxtLink
 				to="#"
-				@click="useNuxtApp().$bus.$emit('evtShowContactSales')"
 				class="text-sm group overflow-hidden relative bg-gray-50 ring-1 hover:ring-transparent ring-gray-300 rounded-full transition-all duration-300"
 			>
 				<div
