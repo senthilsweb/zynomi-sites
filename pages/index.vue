@@ -5,6 +5,7 @@
 			<Hero />
       <Blog :articles="articles" />
       <Footer />
+      <ContactSales/>
 		</div>
 	</div>
 </template>

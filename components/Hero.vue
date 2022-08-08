@@ -22,6 +22,7 @@
 			>
 			<NuxtLink
 				to="#"
+				@click="useNuxtApp().$bus.$emit('evtShowContactSales')"
 				class="text-sm group overflow-hidden relative bg-gray-50 ring-1 hover:ring-transparent ring-gray-300 rounded-full transition-all duration-300"
 			>
 				<div
@@ -35,9 +36,3 @@
 		</div>
 	</main>
 </template>
-
-<script>
-	export default {};
-</script>
-
-<style></style>

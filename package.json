@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.6",
+    "mitt": "^3.0.0",
     "moment-timezone": "^0.5.34"
   }
 }
