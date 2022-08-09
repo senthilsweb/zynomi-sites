@@ -60,9 +60,7 @@
 					<!--Mobile menu activator button (start)-->
 					<div class="flex items-center justify-between w-full md:w-auto">
 									<!--Dummy anchor space to align the mobile nav trigger button (start)-->
-									<a href="/">
-                                        <span class="sr-only">Logo</span>
-                                    </a>
+									
 									<!--Dummy anchor space to align the mobile nav trigger button (end)-->
                                     <div
                                         @click="toggleMobileMenu"
