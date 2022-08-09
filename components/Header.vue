@@ -1,20 +1,68 @@
 <template>
 	<header
-		class="flex items-center bg-fuchsia-900  justify-between h-20 lg:max-w-8xl mx-auto px-5 lg:px-5 sticky top-0 z-50"
+		class="flex items-center bg-fuchsia-900  justify-between h-20 lg:max-w-8xl mx-auto px-5 lg:px-5"
 	>
 		<!-- Logo -->
 		<NuxtLink to="/">
 			<IconLogo class="w-14 h-14" />
 		</NuxtLink>
+		 <!--Mobile Navigation side Bar (Start)-->
+        <div
+            id="mobile_sidebar"
+            v-if="mob_menu"
+            class="fixed z-40 inset-0 flex-none h-full bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72  md:hidden"
+        >
+            <div
+                id="navwrapper"
+                class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
+            >
+                <div class="lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white"></div>
+                <div class="px-5 pt-4 flex items-center justify-between">
+                    <div>
+                        
+                    </div>
+                    <div class="-mr-2">
+                        <button
+                            type="button"
+                            @click="toggleMobileMenu"
+                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600"
+                        >
+                            <span class="sr-only">Close menu</span>
+                            <!-- Heroicon name: outline/x -->
+                            <svg
+                                class="h-6 w-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                                </svg>
+                                </button>
+                    </div>
+                </div>
+                <!--<LeftNavColor/>-->
+                <nav
+                    id="nav"
+                    class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)"
+                >
+                    <LeftNavColor :data="[]" />
+                    </nav>
+                    </div>
+                    </div>
+                    <!--Mobile Navigation Side Bar (End)-->
 		<!-- Nav Starts-->
 		
-		
-
-
                             <!--Main Menu (Start)-->
                             <div class="hidden  space-x-8 md:flex md:ml-10">
                                 <div
-                                    v-for="(menu,idx) in nav"
+                                    v-for="(menu,idx) in menuitems.nav"
                                     @mouseover="showMenu(idx)"
                                     :key="'mnu_' + idx + '_' + menu.link"
                                 >
@@ -137,110 +185,52 @@
 	</header>
 </template>
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+</script>
+<script>
+import menuitems from "@/store/siteconfig.json";
+export default {
+ data() {
+    let isVisible = new Array(20).fill(false);
+		return {
+		menuitems,
+      isVisible,
+      mobileMenuVisiblity: false,
+      mobileNav: false,
+      mob_menu: false,
+    };
+  },
+  created() {
+      useNuxtApp().$bus.$on("evtMobilemenu", data => {
+      this.mob_menu = !this.mob_menu;
+    });
+	},
+  props: {
+    showBranding: Boolean,
+    showActionButtons: Boolean,
+    isAuthenticated: Boolean,
+    textColor: String,
+    logo: String,
+  },
+  methods: {
+    showMenu(index) {
+          this.isVisible.forEach((value, index) => {
+				this.isVisible[index] = false;
+      });
+    	this.isVisible[index] = true;
+    },
+    hideMenu(index) {
+      //this.$set(this.isVisible, index, false);
+	  this.isVisible[index] = false;
+    },
 	
-const nav = [
-	{
-		"img": "https://res.cloudinary.com/nathansweb/image/upload/v1630897884/zicons/layers_g8nilb.svg",
-		"icon": "M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4",
-		"title": "Classes",
-		"link": "/",
-		"children": [
-			{
-				"img": "",
-				"icon": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-				"spancolor" : "fuchsia",
-				"title": "Odissi",
-				"link": "/"
-			},
-			{
-				"img": "",
-				"icon": "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01",
-				"spancolor" : "sky",
-				"title": "Carnatic Music",
-				"link": "/"
-			},
-	
-			{
-				"img": "",
-				"icon": "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z",
-				"spancolor" : "yellow",
-				"title": "Bharathanatiyam",
-				"link": "/"
-			},
-			{
-				"img": "",
-				"icon": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-				"spancolor" : "pink",
-				"title": "Bollywood",
-				"link": "/"
-			},
-		
-			{
-				"img": "",
-				"icon": "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z",
-                "spancolor" : "fuchsia",
-				"title": "Yoga for children",
-				"link": "/"
-			}
-		]
-	},
-	{
-		"img": "https://res.cloudinary.com/nathansweb/image/upload/v1630956425/zicons/holding-hands_q6hb0k.svg",
-		"icon": "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z",
-		"title": "Workshops",
-		"link": "/casestudy"
-	},
-	{
-		"img": "https://res.cloudinary.com/nathansweb/image/upload/v1630956425/zicons/holding-hands_q6hb0k.svg",
-		"icon": "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z",
-		"title": "Dance",
-		"link": "/casestudy"
-	},
-	{
-		"img": "https://res.cloudinary.com/nathansweb/image/upload/v1630897884/zicons/layers_g8nilb.svg",
-		"icon": "M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4",
-		"title": "Gallery",
-		"link": "/",
-		"children": [
-			{
-				"img": "",
-				"icon": "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
-				"spancolor" : "fuchsia",
-				"title": "Photo",
-				"link": "/about"
-			},
-			{
-				"img": "",
-				"icon": "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z",
-				"spancolor" : "sky",
-				"title": "Videos",
-				"link": "/methodology"
-			}
-		]
-	},
-	{
-		"img": "https://res.cloudinary.com/nathansweb/image/upload/v1630956425/zicons/holding-hands_q6hb0k.svg",
-		"icon": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-		"title": "About Us",
-		"link": "/about"
-	}
-];
-const isVisible = ref(new Array(20).fill(false));//https://www.netlify.com/blog/understanding-defineprops-and-defineemits-in-vue-3.2/
-let textColor = "indigo";
-function showMenu(idx) {
-		
-	this.isVisible.forEach((value, index) => {
-		this.isVisible[index] = true;
-		if (index!=idx)
-			this.isVisible[index] = false;
-		});
-};
-function hideMenu(index) {
-	this.isVisible[index] = false;
-}
-function toggleMobileMenu() {
-	this.mobileMenuVisiblity = !this.mobileMenuVisiblity;
-	$nuxt.$emit("evtMobilemenu");
+    toggleMobileMenu() {
+      this.mobileMenuVisiblity = !this.mobileMenuVisiblity;
+      //$nuxt.$emit("evtMobilemenu");
+		useNuxtApp().$bus.$emit('evtMobilemenu');
+    },
+  },
+ 
 };
 </script>
+
