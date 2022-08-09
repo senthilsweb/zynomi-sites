@@ -8,7 +8,7 @@
             >
 
                 <ul
-                    v-for="(menu,idx) in menuitems.menus"
+                    v-for="(menu,idx) in menuitems.nav"
                     :key="'mobile_mnu_' + idx + '_' + menu.link"
                 >
                     <li class="mt-2">
@@ -36,14 +36,6 @@
         </div>
     </div>
 
-    <!--
-        <a
-                            :href="childmenu.link"
-                            v-for="(childmenu,idx) in menu.children"
-                            :key="'mnu_' + idx + '_' + childmenu.link"
-                            class="-m-3 p-3 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150"
-                        >
-                        -->
 </template>
 <script>
 import menuitems from "@/store/siteconfig.json";

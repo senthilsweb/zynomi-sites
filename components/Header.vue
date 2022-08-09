@@ -25,7 +25,7 @@
                         <button
                             type="button"
                             @click="toggleMobileMenu"
-                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600"
+                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-600"
                         >
                             <span class="sr-only">Close menu</span>
                             <!-- Heroicon name: outline/x -->
@@ -57,6 +57,44 @@
                     </div>
                     </div>
                     <!--Mobile Navigation Side Bar (End)-->
+					<!--Mobile menu activator button (start)-->
+					<div class="flex items-center justify-between w-full md:w-auto">
+									<!--Dummy anchor space to align the mobile nav trigger button (start)-->
+									<a href="/">
+                                        <span class="sr-only">Logo</span>
+                                    </a>
+									<!--Dummy anchor space to align the mobile nav trigger button (end)-->
+                                    <div
+                                        @click="toggleMobileMenu"
+                                        class="-mr-2 flex items-center md:hidden"
+                                    >
+                                        <button
+                                            type="button"
+                                            class="rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-fuchsia-500"
+                                            aria-expanded="false"
+                                        >
+                                            <span class="sr-only">Open main menu</span>
+                                            <!-- Heroicon name: outline/menu -->
+                                            <svg
+												
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6 text-white hover:text-fuchsia-500"
+                                                fill="fill-white"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7"
+                                                />
+                                                </svg>
+                                                </button>
+                                </div>
+                            </div>
+					<!--Mobile menu activator button (end)-->
+
 		<!-- Nav Starts-->
 		
                             <!--Main Menu (Start)-->
@@ -200,7 +238,8 @@ export default {
       mob_menu: false,
     };
   },
-  created() {
+	created() {
+	console.log("created")
       useNuxtApp().$bus.$on("evtMobilemenu", data => {
       this.mob_menu = !this.mob_menu;
     });
@@ -224,13 +263,13 @@ export default {
 	  this.isVisible[index] = false;
     },
 	
-    toggleMobileMenu() {
-      this.mobileMenuVisiblity = !this.mobileMenuVisiblity;
-      //$nuxt.$emit("evtMobilemenu");
+	  toggleMobileMenu() {
+		//alert("toggleMobileMenu - clicked")
+		  //this.mobileMenuVisiblity = !this.mobileMenuVisiblity;
+	  	  //this.mob_menu = !this.mob_menu;
 		useNuxtApp().$bus.$emit('evtMobilemenu');
     },
   },
- 
 };
 </script>
 
