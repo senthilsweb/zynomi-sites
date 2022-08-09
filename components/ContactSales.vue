@@ -1,5 +1,5 @@
 <template>
-<section v-if="isContactFormVisible" class="z-10 fixed inset-0 overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+<section v-if="isContactFormVisible" class="z-50 fixed inset-0 overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute inset-0" aria-hidden="true"></div>
         <div class="absolute inset-y-0 right-0 pl-10 max-w-full flex">
@@ -161,7 +161,6 @@ export default {
             detail: "Message Content",
             life: 10000,
         });
-
     },
     created() {
         useNuxtApp().$bus.$on('evtShowContactSales', (data) => {

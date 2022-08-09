@@ -1,5 +1,16 @@
 <template>
-	<svg
+ <a href="/">
+                                        <span class="sr-only">Swara Nritya</span>
+                                        <img 
+                                            tag="img"
+                                            to="#"
+                                            alt="Logo"
+                                            
+                                            class="h-20 w-40"
+                                            src="https://res.cloudinary.com/nathansweb/image/upload/v1640864433/www.zynomi.com/brand-assets/logos/svg/NO_BORDER/Group_21-1_krgdr9.svg"
+                                        />
+                                    </a>
+	<!--<svg
 		id="logo-14"
 		width="73"
 		height="49"
@@ -22,5 +33,5 @@
 			class="ccompli2"
 			fill="#5D2C02"
 		></path>
-	</svg>
-</template>
+	</svg>-->
+	</template>

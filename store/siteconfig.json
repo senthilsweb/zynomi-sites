@@ -1,15 +1,15 @@
 {
   "branding": {
     "logo": {
-      "source": "https://res.cloudinary.com/nathansweb/image/upload/v1650793894/swaranritya/logo-color.jpg",
+      "source": "https://images.ctfassets.net/qqlj6g4ee76j/4cnzmtI7JDKdedi00k5llA/230c63de09f8a2fa59f1e0f136794109/Frame.svg",
       "href": "/"
     },
     "mark": {
-      "source": "https://res.cloudinary.com/nathansweb/image/upload/v1650793894/swaranritya/logo-transparent.png",
+      "source": "https://images.ctfassets.net/qqlj6g4ee76j/4cnzmtI7JDKdedi00k5llA/230c63de09f8a2fa59f1e0f136794109/Frame.svg",
       "href": "/"
     },
     "mlogo": {
-      "source": "https://res.cloudinary.com/nathansweb/image/upload/v1650793894/swaranritya/logo-transparent.png",
+      "source": "https://images.ctfassets.net/qqlj6g4ee76j/4cnzmtI7JDKdedi00k5llA/230c63de09f8a2fa59f1e0f136794109/Frame.svg",
       "href": "/"
     }
   },
