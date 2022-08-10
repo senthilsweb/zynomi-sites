@@ -58,12 +58,8 @@
         </div>
         <!--Mobile Navigation Side Bar (End)-->
 		<!--Mobile menu activator button (start)-->
-		<div class="flex items-center justify-between w-full md:w-auto md:hidden lg:hidden">
-									<!--Dummy anchor space to align the mobile nav trigger button (start)-->
-									<a href="/">
-                                        <span class="sr-only">Logo</span>
-                                    </a>
-									<!--Dummy anchor space to align the mobile nav trigger button (end)-->
+		<div class="flex items-center justify-between w-full md:w-auto">
+									
                                     <div
                                         @click="toggleMobileMenu"
                                         class="-mr-2 flex items-center md:hidden"
