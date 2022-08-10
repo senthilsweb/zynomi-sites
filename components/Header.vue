@@ -10,7 +10,7 @@
         <div
             id="mobile_sidebar"
             v-if="mob_menu"
-            class="fixed z-40 inset-0 flex-none h-full bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72  md:hidden lg:hidden"
+            class="fixed z-40 inset-0 flex-none h-full bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72  md:hidden lg:md:hidden"
         >
             <div
                 id="navwrapper"
@@ -58,8 +58,7 @@
         </div>
         <!--Mobile Navigation Side Bar (End)-->
 		<!--Mobile menu activator button (start)-->
-		<div class="flex items-center justify-between w-full md:w-auto">
-									
+
                                     <div
                                         @click="toggleMobileMenu"
                                         class="-mr-2 flex items-center md:hidden"
@@ -88,7 +87,7 @@
                                                 </svg>
                                                 </button>
                                 </div>
-         </div>
+      
 		<!--Mobile menu activator button (end)-->
 
 		<!-- Nav Starts-->
