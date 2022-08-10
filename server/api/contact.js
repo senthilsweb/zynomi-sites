@@ -1,6 +1,4 @@
 export default async (req, res) => {
-
-
     const body = await useBody(req)
     console.log(body)
     const contact = await $fetch(`${process.env.MONGODB_ATLAS_REST_URL}/insertOne`, {
