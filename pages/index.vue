@@ -1,28 +1,29 @@
 <template>
-	<div class="min-h-screen relative">
-		<div class="h-full relative">
-			<Header />
-			<Hero />
-    
+  <div class="min-h-screen relative">
+    <div class="h-full relative">
+      <Header />
+      <Hero />
+
       <Blog :articles="articles" />
-       <Testimonials />
+      <Testimonials />
       <Footer />
-      <ContactSales/>
-		</div>
-	</div>
+      <ContactSales />
+      <SignUp />
+    </div>
+  </div>
 </template>
 
 <script setup>
-const { data: articles }  = await useAsyncData('articles-list', () => queryContent('casestudy')
+const { data: articles } = await useAsyncData('articles-list', () => queryContent('casestudy')
   .only([
-        "title",
-        "description",
-        "coverimage",
-        "author",
-        "date",
-        "slug",
-        "tags",
-        "type",
+    "title",
+    "description",
+    "coverimage",
+    "author",
+    "date",
+    "slug",
+    "tags",
+    "type",
   ])
   .find())
 </script>
