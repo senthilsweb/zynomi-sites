@@ -25,20 +25,17 @@
                                 </a>
                                 <a :href="'/casestudy/' + article.slug">
                                     <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                        {{ $s(article.description).prune(50)._wrapped }}
+                                        <ClientOnly>
+                                            {{ $s(article.description).prune(50)._wrapped }}
+                                        </ClientOnly>
                                     </h3>
                                     <p class="mt-3 text-base leading-6 text-gray-500">
-                                        {{ $s(article.description).prune(100)._wrapped }}
+                                        <ClientOnly>
+                                            {{ $s(article.description).prune(100)._wrapped }}
+                                        </ClientOnly>
                                     </p>
                                 </a>
-                                <!-- <NuxtLink  :to="{ name: 'casestudy-slug', params: { slug: article.slug } }" class="block" no-prefetch>
-                                        <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                            {{article.title | prune(50)}}
-                                        </h3>
-                                        <p class="mt-3 text-base leading-6 text-gray-500">
-                                            {{article.description | prune(100)}}
-                                        </p>
-                                    </NuxtLink> -->
+
                             </div>
                             <div class="mt-3 flex items-center">
 
@@ -59,7 +56,6 @@
 
                                     </span>
                                 </div>
-
                             </div>
                         </div>
                     </div>
