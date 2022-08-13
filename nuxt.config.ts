@@ -8,6 +8,12 @@ export default defineNuxtConfig({
 	 */
 
 	router: {},
+	autoImports: {
+		dirs: [
+			// Scan composables from nested directories
+			"composables/**",
+		],
+	},
 	build: {
 		postcss: {
 			postcssOptions: {

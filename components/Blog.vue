@@ -7,42 +7,31 @@
                 </h2>
 
                 <div class="mt-6 pt-5 grid gap-4 place-self-center lg:grid-cols-4 lg:gap-x-4 lg:gap-y-8">
-                    <div
-                        v-for="article of articles"
-                        :key="article.slug"
-                        class="shadow-lg flex-col flex-direction: column"
-                    >
+                    <div v-for="article of articles" :key="article.slug"
+                        class="shadow-lg flex-col flex-direction: column">
                         <a :href="'/casestudy/' + article.slug">
                             <div class="flex flex-1 h-48 xxlmin:w-1/2 xxlmax:w-full object-center">
-                                <img
-                                    v-if="article.coverimage"
-                                    class="w-full object-center overflow-hidden"
-                                    :src="article.coverimage"
-                                />
+                                <img v-if="article.coverimage" class="w-full object-center overflow-hidden"
+                                    :src="article.coverimage" />
                             </div>
                         </a>
                         <div class="flex flex-1 flex-col justify-evenly bg-white p-3">
                             <div class="flex-1">
-                                <a
-                                    href="#"
-                                    class="inline-block"
-                                >
-                                    <span
-                                        class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium"
-                                        :class="article.type=='Blog' && 'bg-indigo-100 text-indigo-800' || article.type=='Article' && 'bg-purple-500 text-white' || article.type=='Event' && 'bg-pink-500 text-white'"
-                                    >
-                                        {{article.type}}
-                                        </span>
-                                        </a>
-                                        <a :href="'/casestudy/' + article.slug">
-                                            <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                                {{article.title }}
-                                            </h3>
-                                            <p class="mt-3 text-base leading-6 text-gray-500">
-                                                {{article.description }}
-                                            </p>
-                                        </a>
-                                        <!-- <NuxtLink  :to="{ name: 'casestudy-slug', params: { slug: article.slug } }" class="block" no-prefetch>
+                                <a href="#" class="inline-block">
+                                    <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium"
+                                        :class="article.type == 'Blog' && 'bg-indigo-100 text-indigo-800' || article.type == 'Article' && 'bg-purple-500 text-white' || article.type == 'Event' && 'bg-pink-500 text-white'">
+                                        {{ article.type }}
+                                    </span>
+                                </a>
+                                <a :href="'/casestudy/' + article.slug">
+                                    <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+                                        {{ $s(article.description).prune(50)._wrapped }}
+                                    </h3>
+                                    <p class="mt-3 text-base leading-6 text-gray-500">
+                                        {{ $s(article.description).prune(100)._wrapped }}
+                                    </p>
+                                </a>
+                                <!-- <NuxtLink  :to="{ name: 'casestudy-slug', params: { slug: article.slug } }" class="block" no-prefetch>
                                         <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
                                             {{article.title | prune(50)}}
                                         </h3>
@@ -54,14 +43,14 @@
                             <div class="mt-3 flex items-center">
 
                                 <p class="text-sm leading-5 font-medium text-gray-900">
-                                    {{article.author }}
+                                    {{ article.author }}
                                 </p>
                                 <span class="mx-1">
                                     &middot;
                                 </span>
                                 <div class="flex text-sm leading-5 text-gray-500">
 
-                                    {{article.date }}
+                                    {{ $dayjs(article.date).format('DD-MMM-YYYY') }}
 
                                     <span class="mx-1">
                                         &middot;
@@ -73,38 +62,36 @@
 
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </template>
 
 <script>
 export default {
-  components: {},
-  props: {
-    articles: Array,
-  },
-  filters: {
-    prune(val, len) {
-          return val;
+    components: {},
+    props: {
+        articles: Array,
     },
-  },
+    filters: {
+
+    },
 };
 </script>
 
 <style>
 .article-card {
-  border-radius: 8px;
+    border-radius: 8px;
 }
 
 .article-card a {
-  background-color: #fff;
-  border-radius: 8px;
+    background-color: #fff;
+    border-radius: 8px;
 }
 
 .article-card img div {
-  border-radius: 8px 0 0 8px;
+    border-radius: 8px 0 0 8px;
 }
 </style>
