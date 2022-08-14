@@ -39,13 +39,12 @@
 		<div class="hidden space-x-8 md:ml-10 md:flex">
 			<div v-for="(menu, idx) in menuitems.nav" @mouseover="showMenu(idx)" :key="'mnu_' + idx + '_' + menu.link">
 				<div class="relative" v-if="menu.children">
-					<button type="button"
-						class="group inline-flex items-center space-x-2 font-bold text-xl leading-6 focus:outline-none transition ease-in-out duration-150"
-						:class="textColor == 'white' ? 'text-white' : 'text-white  hover:text-white  focus:text-white'">
+					<button type="button" class="group inline-flex items-center space-x-2 font-bold text-xl leading-6 focus:outline-none transition ease-in-out duration-150
+						text-white  hover:text-white  focus:text-white">
 						<span>{{ menu.title }}</span>
 						<!-- Item active: "text-white", Item inactive: "text-white-400" -->
-						<svg class="transition ease-in-out duration-150" viewBox="0 0 20 20" fill="currentColor"
-							:class="textColor == 'white' ? 'text-white h-5 w-5 group-hover:text-white group-focus:text-white' : 'text-white h-5 w-5 group-hover:text-white group-focus:text-white'">
+						<svg class="transition ease-in-out duration-150
+							text-white h-5 w-5 group-hover:text-white group-focus:text-white" viewBox="0 0 20 20" fill="currentColor">
 							<path fill-rule="evenodd"
 								d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
 								clip-rule="evenodd" />
@@ -92,8 +91,7 @@
 				</div>
 				<div v-else>
 					<a :href="menu.link"
-						class="text-xl leading-6 font-bold  focus:outline-none transition ease-in-out duration-150"
-						:class="textColor == 'white' ? 'text-white' : 'text-white  hover:text-white  focus:text-white'">
+						class="text-xl leading-6 font-bold  focus:outline-none transition ease-in-out duration-150 text-white  hover:text-white  focus:text-white'">
 						{{ menu.title }}
 					</a>
 				</div>
@@ -138,14 +136,12 @@ export default {
 		return {
 			menuitems,
 			isVisible,
-			mobileNav: false
+			mobileNav: false,
+			textColor: 'white'
 		};
 	},
 	created() {
 		//console.log("created")
-	},
-	props: {
-		textColor: String
 	},
 	methods: {
 		showMenu(index) {

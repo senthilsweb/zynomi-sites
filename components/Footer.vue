@@ -4,37 +4,24 @@
       <div class="xl:grid xl:grid-cols-3 xl:gap-2">
 
         <!--Footer Links (Start)-->
-        <FooterLinks/>
+        <FooterLinks />
         <!--Footer Links (end)-->
 
         <!--Newsletter-->
-        <ContactUs/>
+        <ContactUs />
         <!--Newsletter-->
       </div>
       <div class="mt-8 border-t border-white pt-8 md:flex md:items-center md:justify-between">
         <div class="flex md:order-2">
-          <a
-            :href="sm.link"
-            class="ml-6 text-white hover:text-fuchsia-500"
-            v-for="sm in menuitems.socialmedia"
-            :key="sm.title"
-          >
-            <span class="sr-only"> {{sm.title}} </span>
-            <svg
-              class="h-6 w-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                :fill-rule="sm.rule"
-                :d="sm.icon"
-                :clip-rule="sm.rule"
-              />
-              </svg>
-              </a>
+          <a :href="sm.link" class="ml-6 hover:text-fuchsia-500" v-for="sm in menuitems.socialmedia" :key="sm.title">
+            <span class="sr-only"> {{ sm.title }} </span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path :fill-rule="sm.rule" :d="sm.icon" :clip-rule="sm.rule" />
+            </svg>
+          </a>
         </div>
-        <p class="mt-8 text-base leading-6 text-white md:mt-0 md:order-1">
-          {{menuitems.footer.copyright}}
+        <p class="mt-8 text-base leading-6 md:mt-0 md:order-1">
+          {{ menuitems.footer.copyright }}
         </p>
       </div>
     </div>
@@ -47,7 +34,7 @@ import menuitems from "@/store/siteconfig.json";
 
 export default {
   components: {
-   
+
   },
   data() {
     return {
@@ -55,7 +42,7 @@ export default {
     };
   },
   methods: {
-    classNameByIndex: function(index) {
+    classNameByIndex: function (index) {
       //return index % 2 == (0 || 1) ? 'evenodd' : '';
       return "evenodd";
     },

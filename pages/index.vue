@@ -14,6 +14,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  //colorMode: 'system',
+})
+const { data: color } = ref('white')
 const { data: articles } = await useAsyncData('articles-list', () => queryContent('casestudy')
   .only([
     "title",

@@ -1,12 +1,20 @@
 <template>
 	<div>
-		<h1>{{ $t('hello', { name: 'vue-i18n' }) }}</h1>
+		<!--<h1>{{ $t('hello', { name: 'vue-i18n' }) }}</h1>
+		<select v-model="$colorMode.preference">
+			<option value="system">System</option>
+			<option value="light">Light</option>
+			<option value="dark">Dark</option>
+			<option value="sepia">Sepia</option>
+		</select>-->
 		<NuxtPage />
 	</div>
 </template>
 
 <script setup>
 import { Calendar } from 'v-calendar';
+//const colorMode = useColorMode()
+//console.log(colorMode.preference)
 useHead({
 	title: "Advanced Homes",
 	meta: [
