@@ -4,7 +4,7 @@
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute inset-0" aria-hidden="true"></div>
             <div class="absolute inset-y-0 right-0 pl-10 max-w-full flex">
-                <div class="w-screen max-w-6xl">
+                <div class="w-screen max-w-4xl">
                     <div class="h-full divide-y divide-gray-200 flex flex-col bg-white shadow-2xl">
                         <div class="flex-1 h-0 overflow-y-auto">
                             <header
@@ -37,15 +37,16 @@
                                             @submit.prevent="SignUp" ref="frmSignUp">
                                             <input type="hidden" name="form-name" value="SignUp" />
                                             <div class="sm:overflow-hidden">
-                                                <div class="bg-white space-y-6">
-                                                    <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
-
+                                                <section aria-labelledby="shipping-heading">
+                                                    <div class="sm:col-span-6">
+                                                        <h2 class="font-medium text-blue-gray-900">Course
+                                                            Information</h2>
+                                                        <!--<p class="mt-1 text-sm text-blue-gray-500">This information will be kept private and never be shared with others for marketing purposes.</p>-->
+                                                    </div>
+                                                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-3">
                                                         <!-- Checkboxes (Start)-->
                                                         <div class="pt-2 space-y-4 sm:pt-2 sm:space-y-4 sm:col-span-6">
-                                                            <div>
-                                                                <p class="mt-1 max-w-2xl text-sm text-gray-500">Select
-                                                                    the classes you would like to register.</p>
-                                                            </div>
+
                                                             <div
                                                                 class="space-y-6 sm:space-y-5 divide-y divide-gray-200">
                                                                 <div class="pt-6 sm:pt-2">
@@ -54,7 +55,9 @@
                                                                             class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-baseline">
                                                                             <div>
                                                                                 <div class="text-base font-medium text-gray-900 sm:text-sm sm:text-gray-700"
-                                                                                    id="label-email">Class</div>
+                                                                                    id="label-email">Select
+                                                                                    the classes you would like to
+                                                                                    register.</div>
                                                                             </div>
                                                                             <div class="mt-4 sm:mt-0 sm:col-span-2">
                                                                                 <div class="max-w-lg space-y-4">
@@ -116,13 +119,15 @@
                                                             </div>
                                                         </div>
                                                         <!-- Checkboxes (End)-->
-
-                                                        <div class="sm:col-span-6">
-                                                            <h2 class="font-medium text-blue-gray-900">Student
-                                                                Information</h2>
-                                                            <!--<p class="mt-1 text-sm text-blue-gray-500">This information will be kept private and never be shared with others for marketing purposes.</p>-->
-                                                        </div>
-
+                                                    </div>
+                                                </section>
+                                                <section aria-labelledby="shipping-heading" class="mt-10">
+                                                    <div class="sm:col-span-6">
+                                                        <h2 class="font-medium text-blue-gray-900">Student
+                                                            Information</h2>
+                                                        <!--<p class="mt-1 text-sm text-blue-gray-500">This information will be kept private and never be shared with others for marketing purposes.</p>-->
+                                                    </div>
+                                                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-3">
                                                         <div class="sm:col-span-6">
                                                             <label for="first_name"
                                                                 class="block text-sm font-medium text-gray-700">First
@@ -147,7 +152,8 @@
                                                         </div>
                                                         <div class="sm:col-span-6">
                                                             <label for="name"
-                                                                class="block text-sm font-medium text-gray-700"> Date of
+                                                                class="block text-sm font-medium text-gray-700">
+                                                                Date of
                                                                 birth
                                                                 date </label>
                                                             <div class="mt-1 rounded-md shadow-sm">
@@ -171,11 +177,16 @@
                                                                 allergy. Please state N/A if there is no medical
                                                                 information that we need to be aware of</p>
                                                         </div>
-                                                        <div class="sm:col-span-6">
-                                                            <h2 class="font-medium  text-blue-gray-900">
-                                                                Parent/Guardian Information</h2>
+                                                    </div>
+                                                </section>
+                                                <section aria-labelledby="shipping-heading" class="mt-10">
 
-                                                        </div>
+                                                    <div class="sm:col-span-6">
+                                                        <h2 class="font-medium  text-blue-gray-900">
+                                                            Parent/Guardian Information</h2>
+
+                                                    </div>
+                                                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-3">
                                                         <div class="sm:col-span-6">
                                                             <label for="first_name"
                                                                 class="block text-sm font-medium text-gray-700">Full
@@ -213,17 +224,18 @@
                                                                 <!--</div>-->
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </section>
 
+                                                <section aria-labelledby="shipping-heading" class="mt-10">
+                                                    <div class="sm:col-span-6">
+                                                        <h2 class="font-medium  text-blue-gray-900">Address
+                                                            Information</h2>
+                                                        <!--<p class="mt-1 text-sm text-blue-gray-500">This information will be kept private and never be shared with others for marketing purposes.</p>-->
+                                                    </div>
 
-
-
-                                                        <div class="sm:col-span-6">
-                                                            <h2 class="font-medium  text-blue-gray-900">Address
-                                                                Information</h2>
-                                                            <!--<p class="mt-1 text-sm text-blue-gray-500">This information will be kept private and never be shared with others for marketing purposes.</p>-->
-                                                        </div>
-
-                                                        <div class="sm:col-span-6">
+                                                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-3">
+                                                        <div class="sm:col-span-3">
                                                             <label for="address"
                                                                 class="block text-sm font-medium text-gray-700">Address</label>
                                                             <div class="mt-1">
@@ -243,7 +255,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="sm:col-span-6">
+                                                        <div>
                                                             <label for="city"
                                                                 class="block text-sm font-medium text-gray-700">City</label>
                                                             <div class="mt-1">
@@ -253,7 +265,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="sm:col-span-6">
+                                                        <div>
                                                             <label for="region"
                                                                 class="block text-sm font-medium text-gray-700">State
                                                                 / Province</label>
@@ -264,7 +276,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="sm:col-span-6">
+                                                        <div>
                                                             <label for="postal-code"
                                                                 class="block text-sm font-medium text-gray-700">Postal
                                                                 code</label>
@@ -274,13 +286,17 @@
                                                                     class="py-3 px-4 block w-full pl-5 focus:ring-green-500 focus:border-green-500 border-gray-300" />
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </section>
+                                                <!-- Checkboxes (Start)-->
+                                                <div class="pt-2 space-y-4 sm:pt-2 sm:space-y-4 sm:col-span-6">
 
-                                                        <!-- Checkboxes (Start)-->
-                                                        <div class="pt-2 space-y-4 sm:pt-2 sm:space-y-4 sm:col-span-6">
-                                                            <div>
-                                                                <p class="mt-1 max-w-2xl text-sm text-gray-500">Select
-                                                                    the classes you would like to register.</p>
-                                                            </div>
+                                                    <section aria-labelledby="shipping-heading" class="mt-10">
+                                                        <div class="sm:col-span-6">
+                                                            <h2 class="font-medium text-blue-gray-900">Parent Consent
+                                                            </h2>
+                                                        </div>
+                                                        <div class="mt-6 ">
                                                             <div
                                                                 class="space-y-6 sm:space-y-5 divide-y divide-gray-200">
                                                                 <div class="pt-6 sm:pt-2">
@@ -309,12 +325,18 @@
                                                                                                 hereby agree that my
                                                                                                 data entered in the
                                                                                                 contact form will be
-                                                                                                stored electronically,
-                                                                                                and will be processed
-                                                                                                and used for the purpose
-                                                                                                of establishing contact.
-                                                                                                I am aware that I can
-                                                                                                revoke my consent at any
+                                                                                                stored
+                                                                                                electronically,
+                                                                                                and will be
+                                                                                                processed
+                                                                                                and used for the
+                                                                                                purpose
+                                                                                                of establishing
+                                                                                                contact.
+                                                                                                I am aware that I
+                                                                                                can
+                                                                                                revoke my consent at
+                                                                                                any
                                                                                                 time.</label>
 
                                                                                         </div>
@@ -332,13 +354,17 @@
                                                                                             <div class="ml-3 text-sm">
                                                                                                 <label for="candidates"
                                                                                                     class="text-sm text-gray-700">I
-                                                                                                    grant permission for
-                                                                                                    my child to be in
-                                                                                                    the photos/videos
+                                                                                                    grant permission
+                                                                                                    for
+                                                                                                    my child to be
+                                                                                                    in
+                                                                                                    the
+                                                                                                    photos/videos
                                                                                                     taken for
                                                                                                     promotional
                                                                                                     purposes/social
-                                                                                                    media/display on the
+                                                                                                    media/display on
+                                                                                                    the
                                                                                                     school
                                                                                                     website</label>
 
@@ -353,24 +379,24 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- Checkboxes (End)-->
-                                                        <div class="sm:col-span-6">
-                                                            <div class="flex items-center">
-                                                                <input id="terms" type="checkbox"
-                                                                    class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300" />
-                                                                <label for="terms"
-                                                                    class="ml-2 block text-sm leading-5 text-gray-900">
-                                                                    I agree to
-                                                                    <a href="#"
-                                                                        class="font-medium text-green-600 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-                                                                        terms & conditions. </a>
-                                                                </label>
-                                                            </div>
-                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <!-- Checkboxes (End)-->
+                                                <div class="sm:col-span-6">
+                                                    <div class="flex items-center">
+                                                        <input id="terms" type="checkbox"
+                                                            class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300" />
+                                                        <label for="terms"
+                                                            class="ml-2 block text-sm leading-5 text-gray-900">
+                                                            I agree to
+                                                            <a href="#"
+                                                                class="font-medium text-green-600 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                                                                terms & conditions. </a>
+                                                        </label>
                                                     </div>
                                                 </div>
-
                                             </div>
+
                                         </form>
                                     </div>
                                 </div>

@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-
+const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -15,5 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
