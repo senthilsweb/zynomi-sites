@@ -2,8 +2,8 @@
 	<main
 		class="mx-auto bg-gradient-to-r from-fuchsia-800 via-fuchsia-900 to-fuchsia-800 ... lg:max-w-8xl px-5 lg:px-0 pt-14 lg:pt-12">
 		<h1 class="capitalize font-semibold text-[38px] lg:text-7xl text-center leading-snug text-white">
-			Bring ideas to Dance and Music <br />
-			<span class="font-extrabold bg-clip-text text-fuchsia-500">#withSwaranritya</span>
+			Bring ideas to Dance and Music<br />
+			<span class="font-extrabold bg-clip-text text-fuchsia-500">#with Swaranritya</span>
 		</h1>
 		<p class="mt-10 text-small text-center text-white font-medium">
 			We believe dance is the best form of exercise for body and mind <br>so we offer Bollywood Bhangra fitness
@@ -16,7 +16,7 @@
 				<button @click="useNuxtApp().$bus.$emit('evtShowSignUp')"
 					class="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
 					<span class="flex items-center space-x-5">
-						<span class="pr-6 text-gray-100">Sign up</span>
+						<span class="pr-6 font-medium text-white">Sign up</span>
 					</span>
 				</button>
 			</div>

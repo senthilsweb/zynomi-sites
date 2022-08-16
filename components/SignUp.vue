@@ -25,8 +25,10 @@
                                 </div>
                                 <div>
                                     <p class="text-sm leading-5 text-white">
-                                        This information will be kept private and never be shared with others for
-                                        marketing purposes.
+                                        The information that you have provided in this registration form is used by
+                                        us so that we can contact you regarding classes and events, as well as
+                                        ensuring that we are able to contact you in an emergency.Information collected
+                                        by this form will be held for a limited time in accordance with GDPR.
                                     </p>
                                 </div>
                             </header>
@@ -389,7 +391,7 @@
                                                         <label for="terms"
                                                             class="ml-2 block text-sm leading-5 text-gray-900">
                                                             I agree to
-                                                            <a href="#"
+                                                            <a href="legal/tc"
                                                                 class="font-medium text-green-600 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                                                                 terms & conditions. </a>
                                                         </label>

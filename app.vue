@@ -7,7 +7,9 @@
 			<option value="dark">Dark</option>
 			<option value="sepia">Sepia</option>
 		</select>-->
-		<NuxtPage />
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
 	</div>
 </template>
 

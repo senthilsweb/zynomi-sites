@@ -5,11 +5,10 @@
                 <h2 class="text-3xl tracking-tight font-extrabold text-gray-600 sm:text-4xl">
                     Upcoming Events
                 </h2>
-
                 <div class="mt-6 pt-5 grid gap-4 place-self-center lg:grid-cols-4 lg:gap-x-4 lg:gap-y-8">
-                    <div v-for="article of articles" :key="article.slug"
+                    <div v-for="article of articles" :key="article._path"
                         class="shadow-lg flex-col flex-direction: column">
-                        <a :href="'/casestudy/' + article.slug">
+                        <a :href="article._path">
                             <div class="flex flex-1 h-48 xxlmin:w-1/2 xxlmax:w-full object-center">
                                 <img v-if="article.coverimage" class="w-full object-center overflow-hidden"
                                     :src="article.coverimage" />
@@ -23,7 +22,7 @@
                                         {{ article.type }}
                                     </span>
                                 </a>
-                                <a :href="'/casestudy/' + article.slug">
+                                <a :href="article._path">
                                     <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
                                         <ClientOnly>
                                             {{ $s(article.description).prune(50)._wrapped }}
