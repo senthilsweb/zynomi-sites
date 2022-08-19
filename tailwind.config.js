@@ -38,7 +38,10 @@ module.exports = {
       rose: colors.rose,
       teal: colors.teal,
       orange: colors.orange,
-      magenta: colors.magenta
+      magenta: colors.magenta,
+      primary: colors.indigo,
+      secondary: colors.fuchsia,
+      footer: colors.slate,
     },
     extend: {
       fontFamily: {

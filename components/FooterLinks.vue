@@ -8,7 +8,7 @@
                 </h4>
                 <ul class="mt-4">
                     <li class="mt-4" v-for="sm in menuitems.footer.sections[0].menus" :key="sm.title">
-                        <a :href="sm.link" class="text-base text-white leading-6 text-white hover:text-fuchsia-500">
+                        <a :href="sm.link" class="text-base text-white leading-6 text-white hover:text-primary-500">
                             {{ sm.title }}
                         </a>
                     </li>
@@ -20,7 +20,7 @@
                 </h4>
                 <ul class="mt-4">
                     <li class="mt-4" v-for="sm in menuitems.footer.sections[1].menus" :key="sm.title">
-                        <a :href="sm.link" class="text-base leading-6 text-white hover:text-fuchsia-500">
+                        <a :href="sm.link" class="text-base leading-6 text-white hover:text-primary-500">
                             {{ sm.title }}
                         </a>
                     </li>
@@ -34,7 +34,7 @@
                 </h4>
                 <ul class="mt-4">
                     <li class="mt-4" v-for="sm in menuitems.footer.sections[2].menus" :key="sm.title">
-                        <a :href="sm.link" class="text-base leading-6 text-white hover:text-fuchsia-500">
+                        <a :href="sm.link" class="text-base leading-6 text-white hover:text-primary-500">
                             {{ sm.title }}
                         </a>
                     </li>

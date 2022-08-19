@@ -31,14 +31,15 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-
-	publicRuntimeConfig: {
-		BASE_URL: process.env.MONGODB_ATLAS_REST_URL,
-		MONGODB_ATLAS_REST_TOKEN: process.env.MONGODB_ATLAS_REST_TOKEN,
-	},
-	privateRunimeConfig: {
+	runtimeConfig: {
+		// Private config that is only available on the server
 		MONGODB_ATLAS_REST_URL: process.env.MONGODB_ATLAS_REST_URL,
 		MONGODB_ATLAS_REST_TOKEN: process.env.MONGODB_ATLAS_REST_TOKEN,
+		GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
+		// Config within public will be also exposed to the client
+		public: {
+			BASE_URL: process.env.MONGODB_ATLAS_REST_URL,
+		},
 	},
 	modules: ["@nuxt/content"],
 	content: {

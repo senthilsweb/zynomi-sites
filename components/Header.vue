@@ -1,5 +1,5 @@
 <template>
-	<header class="flex1 flex items-center bg-fuchsia-900  justify-between h-20 lg:max-w-8xl mx-auto px-5 lg:px-5">
+	<header class="flex1 flex items-center bg-primary-900  justify-between h-20 lg:max-w-8xl mx-auto px-5 lg:px-5">
 		<!-- Logo (Start)-->
 		<NuxtLink to="/">
 			<IconLogo class="w-14 h-14" />
@@ -69,7 +69,7 @@
 											</div>
 											<div v-else>
 												<!--<span  class="rounded-full bg-indigo-50 inline-flex p-3 text-indigo-700 ring-4 ring-white" :class="`bg-${childmenu.spancolor}-50`">-->
-												<svg class="flex-shrink-0 h-6 w-6 fill-fuchsia-500" fill="none"
+												<svg class="flex-shrink-0 h-6 w-6 fill-primary-500" fill="none"
 													viewBox="0 0 24 24" stroke="currentColor">
 													<path stroke-linecap="round" stroke-linejoin="round"
 														stroke-width="2" :d="childmenu.icon" />
@@ -77,7 +77,7 @@
 												<!--</span>-->
 											</div>
 											<div class="space-y-1">
-												<p class="leading-6 font-bold hover:text-fuchsia-900">
+												<p class="leading-6 font-bold hover:text-primary-900">
 													{{ childmenu.title }}
 												</p>
 											</div>
@@ -102,11 +102,14 @@
 		<!--Nav Action button start-->
 		<div class="hidden md:flex md:items-center md:space-x-6">
 			<NuxtLink to="#"
-				class="px-5 py-2 text-sm  ring-2 ring-fuchsia-500 hover:bg-fuchsia-700 ring-inset text-white rounded-full transition-all duration-300">
+				class="px-5 py-2 text-sm  ring-2 ring-primary-500 hover:bg-primary-700 ring-inset text-white rounded-full transition-all duration-300">
 				Sign in</NuxtLink>
-			<NuxtLink to="#" @click="useNuxtApp().$bus.$emit('evtShowContactSales')"
-				class="px-5 py-2 text-sm bg-fuchsia-500 text-white rounded-full hover:bg-fuchsia-700 transition-all duration-300">
-				Contact us</NuxtLink>
+			<NuxtLink to="#" @click="useNuxtApp().$bus.$emit('evtShowSignUp')"
+				class="px-5 py-2 text-sm bg-primary-500 text-white rounded-full hover:bg-primary-700 transition-all duration-300">
+				Sign up</NuxtLink>
+			<!--<NuxtLink to="#" @click="useNuxtApp().$bus.$emit('evtShowContactSales')"
+				class="px-5 py-2 text-sm bg-primary-500 text-white rounded-full hover:bg-primary-700 transition-all duration-300">
+				Contact us</NuxtLink>-->
 		</div>
 		<!--Nav action button end-->
 		<!--Nav Ends-->
@@ -114,11 +117,11 @@
 	<!--Mobile menu activator button (start)-->
 	<div @click="toggleMobileMenu" class="-mr-2 items-center sm:hidden">
 		<button type="button"
-			class="fixed z-50 top-4 right-4 rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-fuchsia-500"
+			class="fixed z-50 top-4 right-4 rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-primary-500"
 			aria-expanded="false">
 			<span class="sr-only">Open main menu</span>
 			<!-- Heroicon name: outline/menu -->
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hover:text-fuchsia-500" fill="fill-white"
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hover:text-primary-500" fill="fill-white"
 				viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
 			</svg>

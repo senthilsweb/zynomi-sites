@@ -18,7 +18,7 @@
                             <div class="flex-1">
                                 <a href="#" class="inline-block">
                                     <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium"
-                                        :class="article.type == 'Blog' && 'bg-indigo-100 text-indigo-800' || article.type == 'Article' && 'bg-purple-500 text-white' || article.type == 'Event' && 'bg-pink-500 text-white'">
+                                        :class="article.type == 'Blog' && 'bg-emerald-300 text-emerald-800' || article.type == 'Article' && 'bg-secondary-500 text-white' || article.type == 'Event' && 'bg-primary-500 text-white'">
                                         {{ article.type }}
                                     </span>
                                 </a>

@@ -8,14 +8,14 @@
                     <div class="h-full divide-y divide-gray-200 flex flex-col bg-white shadow-2xl">
                         <div class="flex-1 h-0 overflow-y-auto">
                             <header
-                                class="space-y-1 py-6 px-4 bg-gradient-to-r from-fuchsia-900 via-indigo-700 to-fuchsia-900 sm:px-6">
+                                class="space-y-1 py-6 px-4 bg-gradient-to-r from-primary-900 via-secondary-700 to-primary-900 sm:px-6">
                                 <div class="flex items-center justify-between space-x-3">
                                     <h2 class="text-lg leading-7 font-medium text-white">
                                         New Registration
                                     </h2>
                                     <div class="h-7 flex items-center">
                                         <button v-on:click="isSignUpFormVisible = false" aria-label="Close panel"
-                                            class="text-fuchsia-200 hover:text-white transition ease-in-out duration-150">
+                                            class="text-primary-200 hover:text-white transition ease-in-out duration-150">
                                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M6 18L18 6M6 6l12 12" />
@@ -413,7 +413,7 @@
                             </span>
                             <span class="inline-flex rounded-md shadow-sm">
                                 <button v-on:click="SignUp" type="submit"
-                                    class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium  text-white bg-fuchsia-600 hover:bg-fuchsia-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-fuchsia-700 transition duration-150 ease-in-out">
+                                    class="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium  text-white bg-primary-600 hover:bg-primary-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-primary-700 transition duration-150 ease-in-out">
                                     Save
                                 </button>
                             </span>
