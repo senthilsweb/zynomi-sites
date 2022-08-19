@@ -1,7 +1,13 @@
 import {defineNuxtConfig} from "nuxt";
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+import rollupPluginTs from "rollup-plugin-typescript2";
 export default defineNuxtConfig({
+	nitro: {
+		rollupConfig: {
+			plugins: [rollupPluginTs()],
+		},
+	},
 	css: ["~/assets/css/tailwind.css"],
 	/*
 	 ** Plugins to load before mounting the App
@@ -15,6 +21,7 @@ export default defineNuxtConfig({
 		],
 	},
 	build: {
+		transpile: ["@fawmi/vue-google-maps"],
 		postcss: {
 			postcssOptions: {
 				plugins: {

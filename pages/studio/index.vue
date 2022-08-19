@@ -64,4 +64,10 @@ export default {
 }
 
 </script>
+<script setup>
+definePageMeta({
+    //colorMode: 'system',
+    layout: "main",
+})
+</script>
 
