@@ -11,6 +11,7 @@
     "@nuxtjs/dayjs": "^1.4.1",
     "@nuxtjs/moment": "^1.6.1",
     "@tailwindcss/typography": "^0.5.4",
+    "@vue-leaflet/vue-leaflet": "^0.6.1",
     "autoprefixer": "^10.4.8",
     "beautify-scrollbar": "^1.0.8",
     "esbuild": "^0.14.53",
@@ -26,8 +27,10 @@
     "vue-underscore": "^0.1.4"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.72",
     "@heroicons/vue": "^1.0.6",
     "@tailwindcss/forms": "^0.5.2",
+    "leaflet": "^1.8.0",
     "mitt": "^3.0.0",
     "moment-timezone": "^0.5.34",
     "primeicons": "^5.0.0",
